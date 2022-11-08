@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 
 class Welcome extends React.Component {
   render() {
-    return <h1>Welcome {this.props.name}</h1>
+    return <h1>Welcome {this.props.name || "utenteeee"}!!!</h1>
   }
 }
 
