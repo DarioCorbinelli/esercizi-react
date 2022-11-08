@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 
 class Age extends React.Component {
   render() {
-    return this.props.age && <p>Your age is {this.props.age}</p>
+    return this.props.age >= 18 && <p>Your age is {this.props.age}</p>
   }
 }
 class Welcome extends React.Component {
@@ -11,7 +11,7 @@ class Welcome extends React.Component {
     return (
       <div>
         <h1>Welcome {this.props.name || "utenteeee"}!!!</h1>
-        <Age age="13" />
+        <Age age="19" />
       </div>
     )
   }
@@ -19,7 +19,7 @@ class Welcome extends React.Component {
 
 class App extends React.Component {
   render() {
-    return <Welcome name={<strong>Dario</strong>} age="24"/>
+    return <Welcome name={<strong>Dario</strong>}/>
   }
 }
 
