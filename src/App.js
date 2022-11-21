@@ -1,8 +1,8 @@
 import React from "react";
-import Login from "./Login";
+import UncontrolledLogin from "./UncontrolledLogin";
 
 export default class App extends React.Component {
   render() {
-    return <Login />
+    return <UncontrolledLogin />
   }
 }
