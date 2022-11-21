@@ -6,7 +6,7 @@ export default class Login extends React.Component {
     this.state = {
       username: "",
       password: "",
-      checked: false,
+      checked: false
     }
   }
 
@@ -24,14 +24,23 @@ export default class Login extends React.Component {
   onLogin = () => {
     console.log(this.state)
   }
+
+  reset = () => {
+    this.setState({
+      username: "",
+      password: "",
+      checked: false
+    })
+  }
   
   render() {
     return (
       <>
         <input type="text" name="username" value={this.state.username} onChange={this.handleInputsChanges}/>
         <input type="password" name="password" value={this.state.password} onChange={this.handleInputsChanges}/>
-        <input type="checkbox" name="checked" value={this.state.checked} onChange={this.handleInputsChanges}/>
+        <input type="checkbox" name="checked" checked={this.state.checked} onChange={this.handleInputsChanges}/>
         <button disabled={!this.state.username || !this.state.password} onClick={this.onLogin}>Login</button>
+        <button disabled={!this.state.username && !this.state.password} onClick={this.reset}>Reset</button>
       </>
     )
   }
