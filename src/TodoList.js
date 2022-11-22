@@ -24,12 +24,20 @@ export default class TodoList extends React.Component {
     }))
   }
 
+  handleReset = () => {
+    this.setState({
+      input: "",
+      items: []
+    })
+  }
+
   render() {
     return (
       <>
         <form onSubmit={this.handleSubmit}>
           <input type="text" value={this.state.input} onChange={this.handleInput}/>
           <button type="submit">Add todo</button>
+          <button type="reset" onClick={this.handleReset}>Clear</button>
         </form>
         <ul>
           {this.state.items}
