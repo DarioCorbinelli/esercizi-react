@@ -19,7 +19,7 @@ export default class TodoList extends React.Component {
     e.preventDefault()
     
     this.setState(state => ({
-      items: [...state.items, <li key={state.items.length + 1}>{state.input}</li>],
+      items: [...state.items, <li key={state.items.length + 1} id={state.items.length + 1}>{state.input} <button onClick={this.handleDeleteTodo}>delete</button></li>],
       input: ""
     }))
   }
@@ -31,12 +31,23 @@ export default class TodoList extends React.Component {
     })
   }
 
+  handleDeleteTodo = (e) => {
+    this.setState(prevState => {
+      const [liToRemove] = prevState.items.filter(item => item.key === e.target.closest("li").id)
+      const updatedItems = prevState.items.filter(item => item !== liToRemove)
+      
+      return {
+        items: updatedItems
+      }
+    })
+  }
+
   render() {
     return (
       <>
         <form onSubmit={this.handleSubmit}>
           <input type="text" value={this.state.input} onChange={this.handleInput}/>
-          <button type="submit">Add todo</button>
+          <button type="submit" disabled={!this.state.input}>Add todo</button>
           <button type="reset" onClick={this.handleReset}>Clear</button>
         </form>
         <ul>
