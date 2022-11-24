@@ -1,12 +1,26 @@
 import React from "react";
-import Container from "./Container";
+import LanguageContext from "./LanguageContext"
+import DisplayLanguage from "./DisplayLanguage";
 export default class App extends React.Component {
+  state = {
+    language: "it"
+  }
+  
+  handleLangChange = (e) => {
+    this.setState({language: e.target.value})
+  }
+
   render() {
     return (
-      <Container title={ <h1>Questo è il titolo passato tramite prop</h1> }>
-        <h3>Secondo child el</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, amet ipsum! Minima, vero odio totam illo aspernatur accusamus saepe cupiditate alias, ipsum asperiores sed repellendus molestias iste soluta! Eligendi, consequatur?</p>
-      </Container>
+      <>
+        <LanguageContext.Provider value={this.state.language}>
+          <DisplayLanguage />
+        </LanguageContext.Provider>
+        <select name="languages" value={this.state.language} onChange={this.handleLangChange}>
+          <option value="it">Italiano</option>
+          <option value="en">English</option>
+        </select>
+      </>
     )
   }
 }
