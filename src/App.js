@@ -1,9 +1,9 @@
-import Welcome from "priova/Welcome";
 import React from "react";
+import Sum from "./Sum";
 
 
 export default class App extends React.Component {
   render() {
-    return <Welcome name="Dario"/>
+    return <Sum numbers={[1, 2]} />
   }
 }
