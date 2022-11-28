@@ -1,26 +1,9 @@
+import Welcome from "priova/Welcome";
 import React from "react";
-import LanguageContext from "./LanguageContext"
-import DisplayLanguage from "./DisplayLanguage";
-export default class App extends React.Component {
-  state = {
-    language: "it"
-  }
-  
-  handleLangChange = (e) => {
-    this.setState({language: e.target.value})
-  }
 
+
+export default class App extends React.Component {
   render() {
-    return (
-      <>
-        <LanguageContext.Provider value={this.state.language}>
-          <DisplayLanguage />
-        </LanguageContext.Provider>
-        <select name="languages" value={this.state.language} onChange={this.handleLangChange}>
-          <option value="it">Italiano</option>
-          <option value="en">English</option>
-        </select>
-      </>
-    )
+    return <Welcome name="Dario"/>
   }
 }
