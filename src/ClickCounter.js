@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 
 export default function ClickCounter({ initValue = 0 }) {
@@ -9,6 +10,10 @@ export default function ClickCounter({ initValue = 0 }) {
       return count + 1;
     });
   };
+
+  useEffect(() => {
+    console.log(count)
+  }, [count])
 
   return (
     <>
