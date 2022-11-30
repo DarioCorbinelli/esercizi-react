@@ -1,9 +1,9 @@
-import GithubUser from "GithubUser";
+import CardDetails from "CardDetails";
 import React from "react";
 
 class App extends React.Component {
   render() {
-    return <GithubUser user="dariocorbinelli"/>;
+    return <CardDetails />;
   }
 }
 
