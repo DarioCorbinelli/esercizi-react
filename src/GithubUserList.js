@@ -16,6 +16,7 @@ function GithubUserList() {
 
   return (
     <>
+      <h1>Add a user and select it</h1>
       <input type="text" name="user" value={user} onChange={handleInput} />
       <button onClick={handleSearch}>search</button>
       <ul>
