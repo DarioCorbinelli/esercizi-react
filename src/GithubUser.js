@@ -6,6 +6,7 @@ function GithubUser({ username }) {
   const [name, setName] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  
   useEffect(() => {
     setLoading(true);
     setError(null)
@@ -15,21 +16,26 @@ function GithubUser({ username }) {
           throw new Error("Non sono riuscito a trovare nessun account");
         }
         return response.json();
-      }).then((json) => {
+      })
+      .then((json) => {
         setLoading(false);
         setName(json.login);
-      }).catch((e) => {
+      })
+      .catch((e) => {
         setError(e);
-      }).finally(() => {
+      })
+      .finally(() => {
         setLoading(false);
       });
   }, [username]);
 
-  return <>
-    {loading && <h1>Loading...</h1> }
-    {error && <h1>{error.message}</h1> }
-    {name && <h1>{name}</h1> }
-  </>;
+  return (
+    <>
+      {loading && <h1>Loading...</h1> }
+      {error && <h1>{error.message}</h1> }
+      {name && <h1>{name}</h1> }
+    </>
+  )
 }
 
 export default GithubUser;
