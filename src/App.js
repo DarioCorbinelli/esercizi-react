@@ -1,4 +1,5 @@
 import Coutner from "Counter";
+import NotFound from "NotFound";
 import React from "react";
 import { NavLink, Route, Routes } from "react-router-dom";
 import ShowGithubUser from "ShowGithubUser";
@@ -20,6 +21,7 @@ function App() {
           <Route path="counter" element={<Coutner initValue={20}/>}/>
           <Route path="users/:username" element={<ShowGithubUser />}/>
         </Route>
+        <Route path="*" element={<NotFound />}/>
 
       </Routes>
     </>
