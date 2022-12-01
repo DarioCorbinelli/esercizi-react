@@ -20,7 +20,7 @@ export function decrement(payload) {
 
 export function reset() {
   return {
-    type: DECREMENT,
+    type: RESET,
   }
 }
 
