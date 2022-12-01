@@ -1,10 +1,10 @@
 import useSWR from "swr";
 
 function fetcher(url) {
-  return fetch(url).then(response => {
+  if (url) {return fetch(url).then(response => {
     if (response.status !== 200) throw new Error()
     return response.json()
-  })
+  })}
 }
 
 function useGithubUserFetcher(username) {
