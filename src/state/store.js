@@ -1,4 +1,4 @@
 import { createStore } from "redux"
-import counterState from "./counterState"
+import counterReducer from "./counterState"
 
-export default createStore(counterState)
+export default createStore(counterReducer)
