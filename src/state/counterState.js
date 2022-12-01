@@ -24,7 +24,7 @@ export function reset() {
   }
 }
 
-export default function(state = defaultValue, action) {
+export default function counterReducer(state = defaultValue, action) {
   switch (action.type) {
     case INCREMENT: {
       return state + action.payload
