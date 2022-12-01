@@ -10,10 +10,8 @@ function fetcher(url) {
 }
 
 function useGithubUserFetcher(username) {
-  if (username) {
-    const { data, error } = useSWR(`https://api.github.com/users/${username}`, fetcher);
-    return { data, error };
-  }
+  const { data, error } = useSWR(`https://api.github.com/users/${username}`,fetcher);
+  return { data, error };
 }
 
 export default useGithubUserFetcher;
