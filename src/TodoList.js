@@ -31,6 +31,8 @@ export default class TodoList extends React.Component {
     })
   }
 
+  // non ho cambiato niente perché non credo che avrebbe molto senso ripulire i todos ad ogni submit...
+  // comunque ti ho scritto un mess per maggiore chiarezza :-)
   render() {
     return (
       <>
